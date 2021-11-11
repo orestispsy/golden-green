@@ -34,7 +34,7 @@ export default class App extends React.Component {
                             <div className="menuInner">
                                 <div className="language">English</div>
                                 <div className="language">German</div>
-                                <div className="language">Greem</div>
+                                <div className="language">Greek</div>
                             </div>
                         )}
                     </div>
