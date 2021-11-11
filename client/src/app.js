@@ -28,7 +28,7 @@ export default class App extends React.Component {
                         </div>
                         <div className="mainWindowRight">
                             <div className="headlineBack">
-                                <div className="headline">The Green Gold</div>
+                                <div className="headline">Golden Green</div>
                             </div>
                             <div className="mainRightBottom"></div>
                         </div>
@@ -54,7 +54,9 @@ export default class App extends React.Component {
                             </div>
                         )}
                     </div>
+                
                 </div>
+                    <div className="pageBottom"></div>
             </div>
         );
     }
