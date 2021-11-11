@@ -11,5 +11,5 @@ app.get("*", function (req, res) {
 });
 
 var server = app.listen(app.get("port"), function () {
-    console.log("🟢 NEW Project Listening Port:", server.address().port);
+    console.log("🟢 Golden Green Listening Port:", server.address().port);
 });

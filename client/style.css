@@ -1,22 +1,79 @@
 body {
     margin: 0;
-    width:100vw;
-    height:100vh;
-        display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    
 }
 
 .appContainer {
-    display:flex;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: inset 0 0 0 100vh rgba(0, 0, 0, 0.123);
+    background-image: url("olives.jpg");
+    background-size: cover;
+}
+
+.appContainerInner {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width:50vw;
-    height:100vh;
-    color:red;
+    justify-content: flex-start;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+
+    
+}
+
+.headline {
+      margin-top:5vh;
     font-size: 3vmax;
-    background-image: url("avatar.png");
-    background-size: cover;
+    text-shadow: -0 0 10px rgba(0, 0, 0, 0.432), 0 -0 10px rgba(0, 0, 0, 0.432),
+        -0 -0 10px rgba(0, 0, 0, 0.432), 0 0 10px rgba(0, 0, 0, 0.432);
+          font-family: "Darker Grotesque", sans-serif;
+}
+
+.mainWindow{
+
+    width:97vw;
+    height:83vh;
+    border-radius: 3vh;
+    border:1px solid rgba(255, 255, 255, 0.336);
+    background-color:rgba(0, 0, 0, 0.514)
+}
+
+.menu {
+    position: fixed;
+    right: 2vw;
+    top: 2vh;
+    background-color: white;
+    padding: 1vmax;
+    border-radius: 5vh;
+    color:black;
+}
+
+#menu {
+    border-radius: 1vh;
+}
+
+#menuToggler {
+    color: red;
+    cursor: pointer;
+}
+
+.menuToggler {
+    color: olive;
+    cursor: pointer;
+}
+
+.menuInner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.language {
+    padding: 0.5vmax;
 }
