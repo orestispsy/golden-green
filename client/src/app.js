@@ -1,11 +1,13 @@
 import React from "react";
-import { Route, Link, HashRouter } from "react-router-dom";
+import { BrowserRouter, Route, Link, HashRouter } from "react-router-dom";
+import Main from "./main";
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             menu: false,
+            chapter: false,
         };
     }
 
@@ -13,51 +15,75 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div className="appContainer">
-                <div className="appContainerInner">
-                    <div className="mainTopImg">
-                        <img src="branch.png" className="branch"></img>
-                    </div>
-
-                    <div className="mainWindow">
-                        <div className="menuLeft">
-                            <div className="about">About Us</div>
-                            <div className="about">Production</div>
-                            <div className="about">The Oil</div>
-                            <div className="about">Shop</div>
-                        </div>
-                        <div className="mainWindowRight">
+            <BrowserRouter>
+                <div className="appContainer">
+                    <div className="appContainerInner">
+                        <div className="appTop">
                             <div className="headlineBack">
-                                <div className="headline">Golden Green</div>
+                                <div className="headline">The Green Gold</div>
                             </div>
-                            <div className="mainRightBottom"></div>
+                        </div>
+                        <div className="topMenu">
+                            <div
+                                className="topMenuButton"
+                                onClick={(e) => {
+                                    this.setState({ chapter: 1 });
+                                }}
+                            >
+                                Our Olive Oil
+                            </div>
+                            <div
+                                className="topMenuButton"
+                                onClick={(e) => {
+                                    this.setState({ chapter: 2 });
+                                }}
+                            >
+                                {" "}
+                                The Production
+                            </div>
+                            <div
+                                className="topMenuButton"
+                                onClick={(e) => {
+                                    this.setState({ chapter: 3 });
+                                }}
+                            >
+                                About Us
+                            </div>
+                            <div className="topMenuButton">Shop</div>
+                        </div>
+                        <Main chapter={this.state.chapter} />
+                        <div className="appBottom">
+                            <img src="branch.png" className="branch"></img>
                         </div>
                     </div>
-                    <div
-                        className="menu"
-                        id={(this.state.menu && "menu") || ""}
-                    >
-                        <div
-                            className="menuToggler"
-                            id={(this.state.menu && "menuToggler") || ""}
-                            onClick={(e) =>
-                                this.setState({ menu: !this.state.menu })
-                            }
-                        >
-                            LANGUAGE
-                        </div>
-                        {this.state.menu && (
-                            <div className="menuInner">
-                                <div className="language">English</div>
-                                <div className="language">German</div>
-                                <div className="language">Greek</div>
-                            </div>
-                        )}
-                    </div>
-                
                 </div>
-                    <div className="pageBottom"></div>
-            </div>
+
+                <div
+                    className="languageMenu"
+                    id={(this.state.menu && "languageMenu") || ""}
+                    style={{
+                        backgroundColor:
+                            this.state.menu && `rgba(0, 0, 0, 0.5)`,
+                    }}
+                >
+                    <div
+                        className="languageToggler"
+                        id={(this.state.menu && "languageToggler") || ""}
+                        onClick={(e) =>
+                            this.setState({ menu: !this.state.menu })
+                        }
+                    >
+                        LANGUAGE
+                    </div>
+                    {this.state.menu && (
+                        <div className="languageBox">
+                            <div className="language">English</div>
+                            <div className="language">German</div>
+                            <div className="language">Greek</div>
+                        </div>
+                    )}
+                </div>
+            </BrowserRouter>
         );
     }
 }

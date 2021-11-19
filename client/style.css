@@ -17,21 +17,15 @@ body {
     background-color: rgb(0, 0, 0);
     background-color: rgba(255, 0, 0, 0.075);
     font-family: "Darker Grotesque", sans-serif;
-}
-
-::-webkit-scrollbar {
-    width: 0;
+           animation: sampleanimation 0.5s;
 }
 
 .appContainer {
     display: flex;
     width: 100vw;
     height: 100vh;
-
-    background-image: url("olives1.jpg");
+    background-image: url("olives2.jpg");
     background-size: cover;
-    background-position-y: 70%;
-    overflow: hidden;
 }
 
 .appContainerInner {
@@ -42,14 +36,7 @@ body {
     color: rgb(255, 255, 255);
 }
 
-.headline {
-    padding: 1vmax;
-    font-size: 3vmax;
-    font-family: "Poiret One", cursive;
-    z-index: 2;
-}
-
-.mainTopImg,
+.appBottom,
 .headlineBack {
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.596);
@@ -60,9 +47,61 @@ body {
 }
 
 .headlineBack {
-    margin-top: 0.3vmax;
-    margin-left: -17vw;
     background-color: rgba(0, 0, 0, 0.678);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.headline {
+    height:5vmax;
+    padding: 1vmax;
+    font-size: 3vmax;
+    font-family: "Poiret One", cursive;
+    z-index: 2;
+}
+
+.appTop {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.topMenu {
+    display: flex;
+    text-align: center;
+    width: 100vw;
+  
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.678);
+    font-family: "Darker Grotesque", sans-serif;
+    text-shadow: -1px 1px 7px rgba(255, 255, 255, 0.07),
+        1px -1px 7px rgba(255, 255, 255, 0.07),
+        -1px -1px 7px rgba(255, 255, 255, 0.07),
+        -1px -1px 7px rgba(255, 255, 255, 0.07);
+}
+
+.topMenuButton {
+    color: white;
+    font-size: 2vmax;
+    margin: 0.5vmax;
+    cursor: pointer;
+    width: 15vw;
+}
+
+.topMenuButton:hover {
+    background-color: rgba(128, 128, 0, 0.205);
+    color:rgb(255, 219, 60)
+}
+
+.appBottom {
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.596);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .branch {
@@ -71,108 +110,90 @@ body {
     padding: 1vmax;
 }
 
-.mainWindow {
-    display: flex;
-    width: 100vw;
-    height: 90vh;
-
-    background-color: rgba(255, 255, 255, 0.219);
-}
-
-.menuLeft {
-    margin-top: 15vh;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 67vh;
-    width: 17vw;
-    background-color: rgba(255, 0, 0, 0.075);
-    font-family: "Darker Grotesque", sans-serif;
-    text-shadow: -1px 1px 7px rgba(255, 255, 255, 0.07),
-        1px -1px 7px rgba(255, 255, 255, 0.07),
-        -1px -1px 7px rgba(255, 255, 255, 0.07),
-        -1px -1px 7px rgba(255, 255, 255, 0.07);
-}
-
-.mainWindowRight {
-    width: 83vw;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.mainRightBottom {
-     display: flex;
-    flex-direction: column;
-
-    margin-left: -17vw;
-    height: 3vmax;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.808);
-}
 
 
-.about {
-    color: white;
-    font-size: 2vmax;
-    background-color: rgba(0, 0, 0, 0.507);
-    margin: 0.5vmax;
-    padding: 0.5vmax;
-    cursor: pointer;
-    width: inherit;
-}
-
-.about:hover {
-    color: black;
-    background-color: rgba(128, 128, 0, 0.205);
-}
-
-.menu {
+.languageMenu {
     text-align: center;
     position: fixed;
     right: 2vw;
     top: 1.5vh;
-    background-color: rgba(255, 255, 255, 0.267);
-    padding: 0.5vmax;
+    background-color: rgba(0, 0, 0, 0.5);
 
+    padding: 0.5vmax;
     color: black;
     font-family: "Darker Grotesque", sans-serif;
 }
 
-
-
-.menuToggler {
+.languageToggler {
     color: white;
     letter-spacing: 1px;
     cursor: pointer;
-
 }
 
-.menuToggler:hover {
-    text-shadow: -1px 1px 7px rgba(0, 0, 0, 0.5),
-        1px -1px 7px rgba(0, 0, 0, 0.5), -1px -1px 7px rgba(0, 0, 0, 0.5),
-        -1px -1px 7px rgba(0, 0, 0, 0.5);
+.languageMenu:hover {
+    background-color: rgba(255, 255, 255, 0.267);
 }
 
-.menuInner {
+.languageBox {
     display: flex;
     align-items: center;
 }
 
 .language {
-    font-family: 'Poiret One', cursive;
+    font-family: "Poiret One", cursive;
     cursor: pointer;
-    color:white;
+    color: white;
     padding: 0 0.5vmax;
-    margin-top:0.5vmax
+    margin-top: 0.5vmax;
 }
 
-.language:hover{
-      text-shadow: -1px 1px 7px rgba(0, 0, 0, 0.5),
+.language:hover {
+    text-shadow: -1px 1px 7px rgba(0, 0, 0, 0.5),
         1px -1px 7px rgba(0, 0, 0, 0.5), -1px -1px 7px rgba(0, 0, 0, 0.5),
         -1px -1px 7px rgba(0, 0, 0, 0.5);
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.116);
+    font-size: 3vmax;
+}
+
+.text:nth-child(1){
+}
+
+.text {
+      background-color: rgba(128, 128, 0, 0.205);
+        padding:0 1vmax;
+        text-indent: 1vmax;
+    font-size: 2vmax;
+    width: 70vw;
+    color: white;
+    text-shadow: -1px 1px 7px rgba(0, 0, 0, 0.5), 1px -1px 7px rgba(0, 0, 0, 0.5),
+        -1px -1px 7px rgba(0, 0, 0, 0.5), -1px -1px 7px rgba(0, 0, 0, 0.5);
+        margin:1vmax;
+
+}
+
+@keyframes sampleanimation {
+    0% {
+        opacity: 0%;
+    }
+    25% {
+        opacity: 25%;
+    }
+    50% {
+        opacity: 50%;
+    }
+    75% {
+        opacity: 75%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }

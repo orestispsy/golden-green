@@ -20,7 +20,7 @@ module.exports = {
     },
     devServer: {
          static: './client/public',
-      
+    
         proxy: {
             "/": {
                 target: "http://localhost:3001",
