@@ -8,19 +8,37 @@ export default class App extends React.Component {
         this.state = {
             menu: false,
             chapter: false,
+            test:false,
+            test2:false
         };
     }
 
     componentDidMount() {}
 
+    
+
     render() {
         return (
             <BrowserRouter>
-                <div className="appContainer">
+                <div
+                    className="appContainer"
+                    onAnimationStart={(e) => {
+                        clearTimeout(timer);
+                        const timer = setTimeout(() => {
+                            this.setState({ test: true,test2:true });
+                        }, 200);
+                    }}
+                   
+                >
                     <div className="appContainerInner">
                         <div className="appTop">
                             <div className="headlineBack">
-                                <div className="headline">The Green Gold</div>
+                                {this.state.test && (
+                                    <div className="headline">
+                                        {" "}
+                                        The Green Gold
+                                    </div>
+                                )}
                             </div>
                         </div>
                         <div className="topMenu">
@@ -51,7 +69,7 @@ export default class App extends React.Component {
                             </div>
                             <div className="topMenuButton">Shop</div>
                         </div>
-                        <Main chapter={this.state.chapter} />
+                        {this.state.test2 && <Main chapter={this.state.chapter} />}
                         <div className="appBottom">
                             <img src="branch.png" className="branch"></img>
                         </div>

@@ -13,6 +13,8 @@ export default function Main({ chapter }) {
         [chapter]
     );
 
+   
+
     return (
         <div className="mainContainer">
             <div className="text" id="text1">
