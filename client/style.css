@@ -24,7 +24,7 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-image: url("olives2.jpg");
+    background-image: url("olives1.jpg");
     background-size: cover;
     animation: fadeIN 0.5s;
 }
@@ -59,7 +59,7 @@ body {
     font-size: 3vmax;
     font-family: "Poiret One", cursive;
     z-index: 2;
-    animation:  fadeIN 0.2s, textAnim 0.5s, shopBlink 4s, headLine 2s;
+    animation:  fadeIN 0.2s, textAnim 0.5s, shopBlink 4s, headLine 1.5s;
         border-bottom: 1px solid rgb(255, 255, 255);
         width:100vw;
     text-align: center;
@@ -109,6 +109,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+        background-color: rgba(0, 0, 0, 0.596);
 }
 
 .branch {
@@ -166,7 +167,7 @@ body {
     width: 100vw;
     height: 75vh;
     overflow-y: auto;
-    background-color: rgba(0, 0, 0, 0.116);
+ 
     font-size: 3vmax;
     animation: mainOpen 1s;
 }
@@ -249,6 +250,6 @@ body {
        width:100vw}
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 0;
-} */
+}

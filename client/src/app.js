@@ -25,42 +25,45 @@ export default class App extends React.Component {
                     onAnimationStart={(e) => {
                         clearTimeout(timer);
                         const timer = setTimeout(() => {
-                            this.setState({ test: true,test2:true });
+                            this.setState({ test: true, test2: true });
                         }, 200);
                     }}
-
-                    onAnimationEnd={(e)=>{
-                                       var ddd =
-                                           document.getElementsByClassName(
-                                               "topMenuButton"
-                                           );
-                                       var i = 0;
-                                  
-                                       var interval = setInterval(function () {
-                                           var obj = ddd[i];
-
-                                           obj.style.visibility = "visible";
-                                           if (i<ddd.length-1){
-                                                    obj.style.animation =
-                                                        "shopBlink 2s";
-                                           }
-                                      
-                                           i++;
-                                         
-                                           if (i === ddd.length){
-                                               
-                                               clearInterval(interval);}
-                                          
-                                       }, 150);
-                                             this.setState({ blinkShop: true });
-                    }}
-                   
                 >
                     <div className="appContainerInner">
                         <div className="appTop">
                             <div className="headlineBack">
                                 {this.state.test && (
-                                    <div className="headline">
+                                    <div
+                                        className="headline"
+                                        onAnimationEnd={(e) => {
+                                            var ddd =
+                                                document.getElementsByClassName(
+                                                    "topMenuButton"
+                                                );
+                                            var i = 0;
+
+                                            var interval = setInterval(
+                                                function () {
+                                                    var obj = ddd[i];
+
+                                                    obj.style.visibility =
+                                                        "visible";
+                                                    if (i < ddd.length - 1) {
+                                                        obj.style.animation =
+                                                            "shopBlink 2s";
+                                                    }
+
+                                                    i++;
+
+                                                    if (i === ddd.length) {
+                                                        clearInterval(interval);
+                                                    }
+                                                },
+                                                150
+                                            );
+                                            this.setState({ blinkShop: true });
+                                        }}
+                                    >
                                         {" "}
                                         The Green Gold
                                     </div>
@@ -70,7 +73,6 @@ export default class App extends React.Component {
                         <div className="topMenu">
                             <div
                                 className="topMenuButton"
-                             
                                 onClick={(e) => {
                                     this.setState({ chapter: 1 });
                                 }}
@@ -94,15 +96,20 @@ export default class App extends React.Component {
                             >
                                 About Us
                             </div>
-                            <div className="topMenuButton"
-                            style={{
-                                    animation: this.state.blinkShop && `shopBlink 0.5s 4 `
-                                   
-                          
-                            }}
-                           >Shop</div>
+                            <div
+                                className="topMenuButton"
+                                style={{
+                                    animation:
+                                        this.state.blinkShop &&
+                                        `shopBlink 0.5s 4 `,
+                                }}
+                            >
+                                Shop
+                            </div>
                         </div>
-                        {this.state.test2 && <Main chapter={this.state.chapter} />}
+                        {this.state.test2 && (
+                            <Main chapter={this.state.chapter} />
+                        )}
                         <div className="appBottom">
                             <img src="branch.png" className="branch"></img>
                         </div>
