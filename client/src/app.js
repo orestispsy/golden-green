@@ -50,7 +50,7 @@ export default class App extends React.Component {
                                                         "visible";
                                                     if (i < ddd.length - 1) {
                                                         obj.style.animation =
-                                                            "shopBlink 2s";
+                                                            "fadeIN 1s, shopBlink 2s";
                                                     }
 
                                                     i++;
@@ -101,7 +101,8 @@ export default class App extends React.Component {
                                 style={{
                                     animation:
                                         this.state.blinkShop &&
-                                        `shopBlink 0.5s 4 `,
+                                        `fadeIN 3s, shopBlink 0.5s 4 `,
+                                      
                                 }}
                             >
                                 Shop
