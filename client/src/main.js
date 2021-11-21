@@ -13,7 +13,7 @@ export default function Main({ chapter }) {
         [chapter]
     );
 
-   
+    useEffect(function () {}, []);
 
     return (
         <div className="mainContainer">

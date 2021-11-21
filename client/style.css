@@ -17,6 +17,7 @@ body {
     background-color: rgb(0, 0, 0);
     background-color: rgba(255, 0, 0, 0.075);
     font-family: "Darker Grotesque", sans-serif;
+    user-select: none;
 }
 
 .appContainer {
@@ -43,22 +44,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .headlineBack {
     background-color: rgba(0, 0, 0, 0.678);
-    border-bottom: 1px solid rgb(255, 255, 255);
+
     height: 5vmax;
-}
+
+    }
 
 .headline {
-    animation: fadeIN 0.2s;
     padding: 1vmax;
     font-size: 3vmax;
     font-family: "Poiret One", cursive;
     z-index: 2;
-    animation: textAnim 0.5s;
+    animation:  fadeIN 0.2s, textAnim 0.5s, shopBlink 4s, headLine 2s;
+        border-bottom: 1px solid rgb(255, 255, 255);
+        width:100vw;
+    text-align: center;
 }
 
 .appTop {
@@ -85,16 +89,17 @@ body {
 }
 
 .topMenuButton {
-    color: white;
     font-size: 2vmax;
     margin: 0.5vmax;
     cursor: pointer;
     width: 15vw;
+    visibility: hidden;
+
 }
 
 .topMenuButton:hover {
     background-color: rgba(128, 128, 0, 0.205);
-    color: rgb(255, 219, 60);
+    color: rgb(255, 219, 60) !important;
 }
 
 .appBottom {
@@ -176,6 +181,7 @@ body {
         1px -1px 7px rgba(0, 0, 0, 0.5), -1px -1px 7px rgba(0, 0, 0, 0.5),
         -1px -1px 7px rgba(0, 0, 0, 0.5);
     margin: 1vmax;
+    text-align: center;
 }
 
 @keyframes fadeIN {
@@ -206,6 +212,41 @@ body {
     100% {
         height: 75vh;
     }
+}
+
+@keyframes shopBlink {
+    0% {
+        text-shadow: -1px 1px 7px rgba(255, 255, 255, 0.07),
+            1px -1px 7px rgba(255, 255, 255, 0.07),
+            -1px -1px 7px rgba(255, 255, 255, 0.07),
+            -1px -1px 7px rgba(255, 255, 255, 0.07);
+    }
+
+    50% {
+  text-shadow: -1px 1px 7px rgba(255, 255, 255, 0.5),
+            1px -1px 7px rgba(255, 255, 255, 0.5),
+            -1px -1px 7px rgba(255, 255, 255, 0.5),
+            -1px -1px 7px rgba(255, 255, 255, 0.5);
+    }
+
+   
+    100% {
+        text-shadow: -1px 1px 7px rgba(255, 255, 255, 0.07),
+            1px -1px 7px rgba(255, 255, 255, 0.07),
+            -1px -1px 7px rgba(255, 255, 255, 0.07),
+            -1px -1px 7px rgba(255, 255, 255, 0.07);
+    }
+}
+
+@keyframes headLine {
+    0% {
+       width:50vw;
+    }
+
+
+
+    100% {
+       width:100vw}
 }
 
 /* ::-webkit-scrollbar {
