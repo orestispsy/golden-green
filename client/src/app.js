@@ -65,7 +65,7 @@ export default class App extends React.Component {
                                         }}
                                     >
                                         {" "}
-                                        The Green Gold
+                                        The Golden Green
                                     </div>
                                 )}
                             </div>
